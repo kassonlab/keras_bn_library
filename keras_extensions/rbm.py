@@ -30,7 +30,7 @@ class RBM(Layer):
 		Wrbm=None, bh=None, bx=None,
 		**kwargs):
 
-                super(RBM, self).__init__(initializer=init, **kwargs)
+                super(RBM, self).__init__(init=init, **kwargs)
 		self.p = dropout
 		if(0.0 < self.p < 1.0): 
 			self.uses_learning_phase = True 
