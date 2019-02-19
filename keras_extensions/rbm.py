@@ -48,7 +48,6 @@ class RBM(Layer):
 			self.is_persistent = persistent
 			self.nb_gibbs_steps = nb_gibbs_steps
 
-		self.my_updates = []
 		self.init = initializers.get(init)
 		self.activation = activations.get(activation)
 		self.hidden_dim = hidden_dim
@@ -237,7 +236,7 @@ class RBM(Layer):
 		y, x_rec = loss(chain_start, x)
 
 		if(self.is_persistent):
-			self.my_updates = [(self.persistent_chain, x_rec)]
+			self.add_updates([(self.persistent_chain, x_rec)])
 
 		return y
 
