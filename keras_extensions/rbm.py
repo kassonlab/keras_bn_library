@@ -9,11 +9,11 @@ import marshal
 import sys
 import warnings
 
-from keras import activations, initializations, regularizers, constraints
+from keras import activations, initializers, regularizers, constraints
 from keras import backend as K
 from keras.engine import InputSpec, Layer
 from keras.layers.core import Dense, Flatten
-from keras_extensions.initializations import glorot_uniform_sigm
+from keras_extensions.initializers import glorot_uniform_sigm
 from keras_extensions.activations import nrlu
 
 class RBM(Layer):
