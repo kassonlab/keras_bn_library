@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 import numpy as np
-from keras.initializations import get_fans, uniform
+from keras.initializers import get_fans, uniform
 
 def glorot_uniform_sigm(shape, name=None, dim_ordering='th'):
     """
