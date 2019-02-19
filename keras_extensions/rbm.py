@@ -30,6 +30,7 @@ class RBM(Layer):
 		Wrbm=None, bh=None, bx=None,
 		**kwargs):
 
+		self.rbm_initializer = init
  		self.p = dropout
 		if(0.0 < self.p < 1.0): 
 			self.uses_learning_phase = True 
@@ -79,7 +80,7 @@ class RBM(Layer):
 
 		if(Wrbm == None):
 			self.Wrbm = self.add_weight((input_dim, self.hidden_dim),
-									initializer=self.init,
+									initializer=self.rbm_initializer,
 									name='{}_Wrbm'.format(self.name),
 									regularizer=self.Wrbm_regularizer,
 									constraint=self.Wrbm_constraint)
