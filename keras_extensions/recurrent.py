@@ -3,7 +3,7 @@ from __future__ import absolute_import
 import numpy as np
 
 import keras.backend as K
-from keras import activations, initializations, regularizers
+from keras import activations, initializers, regularizers
 from keras.engine import Layer, InputSpec
 from keras.layers.recurrent import Recurrent, time_distributed_dense
 from keras.layers.core import Flatten
@@ -17,9 +17,9 @@ class DecoderVaeLSTM(Recurrent):
                  dropout_W=0., dropout_U=0., **kwargs):
 
 		self.output_dim = output_dim
-		self.init = initializations.get(init)
-		self.inner_init = initializations.get(inner_init)
-		self.forget_bias_init = initializations.get(forget_bias_init)
+		self.init = initializers.get(init)
+		self.inner_init = initializers.get(inner_init)
+		self.forget_bias_init = initializers.get(forget_bias_init)
 		self.activation = activations.get(activation)
 		self.inner_activation = activations.get(inner_activation)
 		self.W_regularizer = regularizers.get(W_regularizer)
@@ -146,9 +146,9 @@ class QRNN(Recurrent):
                  W_regularizer=None, U_regularizer=None, b_regularizer=None,
                  dropout_W=0., dropout_U=0., **kwargs):
 		self.output_dim = output_dim
-		self.init = initializations.get(init)
-		self.inner_init = initializations.get(inner_init)
-		self.forget_bias_init = initializations.get(forget_bias_init)
+		self.init = initializers.get(init)
+		self.inner_init = initializers.get(inner_init)
+		self.forget_bias_init = initializers.get(forget_bias_init)
 		self.activation = activations.get(activation)
 		self.inner_activation = activations.get(inner_activation)
 		self.W_regularizer = regularizers.get(W_regularizer)

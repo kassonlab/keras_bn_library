@@ -11,7 +11,7 @@ from keras_extensions.logging import log_to_file
 from keras_extensions.rbm import RBM
 from keras_extensions.dbn import DBN
 from keras_extensions.layers import SampleBernoulli
-from keras_extensions.initializations import glorot_uniform_sigm
+from keras_extensions.initializers import glorot_uniform_sigm
 
 # configuration
 input_dim = 100

@@ -7,7 +7,7 @@ from keras.models import Sequential
 from keras.optimizers import SGD, RMSprop
 from keras.layers import Dense, Flatten
 from keras_extensions.rbm import RBM
-from keras_extensions.initializations import glorot_uniform_sigm
+from keras_extensions.initializers import glorot_uniform_sigm
 from keras_extensions.rnnrbm import RNNRBM
 import matplotlib.pyplot as plt
 

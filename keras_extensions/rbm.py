@@ -49,7 +49,7 @@ class RBM(Layer):
 			self.nb_gibbs_steps = nb_gibbs_steps
 
 		self.updates = []
-		self.init = initializations.get(init)
+		self.init = initializers.get(init)
 		self.activation = activations.get(activation)
 		self.hidden_dim = hidden_dim
 		self.input_dim = input_dim

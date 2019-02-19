@@ -1,7 +1,7 @@
 import numpy as np
 
 from keras_extensions.rbm import RBM
-from keras_extensions.initializations import glorot_uniform_sigm
+# from keras_extensions.initializers import glorot_uniform_sigm
 from keras_extensions.layers import SampleBernoulli
 from keras.models import Sequential
 from keras.optimizers import SGD

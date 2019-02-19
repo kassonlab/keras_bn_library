@@ -8,12 +8,12 @@ import marshal
 import sys
 import warnings
 
-from keras import activations, initializations, regularizers, constraints
+from keras import activations, initializers, regularizers, constraints
 from keras import backend as K
 from keras.engine import InputSpec, Layer
 from keras.layers.core import Dense, Flatten
 from keras.layers.recurrent import Recurrent, SimpleRNN, time_distributed_dense
-from keras_extensions.initializations import glorot_uniform_sigm
+from keras_extensions.initializers import glorot_uniform_sigm
 from keras_extensions.activations import nrlu
 from keras_extensions.rbm import RBM
 from keras_extensions.dbn import DBN
@@ -32,9 +32,9 @@ class RNNRBM(Recurrent):
 				dropout_RBM=0.,
 				**kwargs):
 
-		self.init = initializations.get(init)
+		self.init = initializers.get(init)
 		self.init_rbm = glorot_uniform_sigm
-		self.inner_init = initializations.get(inner_init)
+		self.inner_init = initializers.get(inner_init)
 		self.activation = activations.get(activation)
 		self.W_regularizer = regularizers.get(W_regularizer)
 		self.U_regularizer = regularizers.get(U_regularizer)
