@@ -30,6 +30,7 @@ class RBM(Layer):
 		Wrbm=None, bh=None, bx=None,
 		**kwargs):
 
+                super(RBM, self).__init__(initializer=init, **kwargs)
 		self.p = dropout
 		if(0.0 < self.p < 1.0): 
 			self.uses_learning_phase = True 
@@ -48,7 +49,7 @@ class RBM(Layer):
 			self.is_persistent = persistent
 			self.nb_gibbs_steps = nb_gibbs_steps
 
-		self.initializer = initializers.get(init)
+		# self.initializer = initializers.get(init)
 		self.activation = activations.get(activation)
 		self.hidden_dim = hidden_dim
 		self.input_dim = input_dim
